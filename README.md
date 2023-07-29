@@ -11,8 +11,8 @@
 
 ## Header Information:
 ```
-- Header Size        = Bytes 0x00 - 0x20
-- Texture Name       = Bytes 0x00 - 0x04
+- Header Size        = Bytes 0x00 -> 0x20
+- Texture Name       = Bytes 0x00 -> 0x04
 - Texture Mode       = Byte 0x05
 - Texture Width      = Byte 0x0C
 - Texture Height     = Byte 0x10
