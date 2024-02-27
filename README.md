@@ -3,8 +3,8 @@
 - Information provided in this Documentation can be used in Applications to Read/Write Data.
 
 ## Notice:
-- This Guide only goes over ARGB Skins.
-- ARGB Skins in *.3DST Format are ALWAYS have a fixed length of 0x4020 Bytes.
+- This Guide only goes over ETC2_RGBA8 Skins which look like ARGB (but infact is not).
+- ETC2_RGBA8 Skins in *.3DST Format are ALWAYS have a fixed length of 0x4020 Bytes.
 
 ### Before Continuing...
 - Make sure your .3DST Skins you want to edit follow the "Notice" section.
@@ -18,7 +18,7 @@
 - Texture Height     = Byte 0x10
 - Width Checksum     = Byte 0x14
 - Height Checksum    = Byte 0x18
-- Image Format       = ARGB
+- Image Format       = ETC2_RGBA8 (in format of ARGB)
 - MIP Value          = Byte 0x1C
 ```
 ## Indicators:
@@ -35,12 +35,12 @@ And are either full opaige or fully off (no in-between).
 
                             A  R  G  B  - Values
 - Pixel With No Color     = 00 00 00 00
-                            ^ Indicator (Alpha Value)
+                            ^ Indicator (Alpha Value *0xFF means color, anything else means none)
 ```
 ## Cubes/Blocks (Image Comprehension):
 ```
 - Cubes              = A group of Pixels in a 2x2 grid (Every 0x10 Bytes).
-- Blocks             = A collection of cubes in a 4x4 grid (Every 0xFF Bytes).
+- Blocks             = A collection of cubes in a 2x2 grid (Every 0xFF Bytes).
 
 Blocks go from Left to Right (A total of 8 times).
 ```
